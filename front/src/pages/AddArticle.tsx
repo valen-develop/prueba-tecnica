@@ -37,8 +37,8 @@ export function AddArticle() {
       content: form.content,
     };
 
-    addArticle({ article }).then(() => {
-      //navigate("/news");
+    addArticle({ article }).then((response) => {
+      if (response) navigate("/news");
     });
   };
 

@@ -21,8 +21,8 @@
 
 ### Requisitos previos
 
-1. Tener [Node.js](https://nodejs.org/) instalado.
-2. Tener acceso a la API externa de noticias ([NewsAPI](https://newsapi.org/)) y obtener tu API Key.
+1. Tener [Node.js](https://nodejs.org/) y [MongoDB](https://www.mongodb.com/es) instalado.
+2. Tener acceso a la API externa de noticias ([NewsAPI](https://newsapi.org/)) (usar el API_KEY del .env.example).
 
 ### Pasos para la instalación y configuración del proyecto
 

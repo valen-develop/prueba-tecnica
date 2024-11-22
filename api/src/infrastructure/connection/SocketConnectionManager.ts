@@ -22,13 +22,10 @@ export class SocketConnectionManager {
   }
 
   public initSocketIO() {
-    // Asocia el servidor HTTP con Socket.IO
-
     this.server.listen(3001, () => {
       console.log(`Server running at http://localhost:${this.PORT}`);
     });
 
-    // Iniciar Socket.IO en el servidor existente
     this.io.on("connection", (socket) => {
       console.log("User connected");
       socket.on("disconnect", () => {
@@ -38,8 +35,6 @@ export class SocketConnectionManager {
   }
 
   public async emitEvent(event: string, message: string) {
-    console.log();
-
     this.io.emit(event, message);
   }
 }

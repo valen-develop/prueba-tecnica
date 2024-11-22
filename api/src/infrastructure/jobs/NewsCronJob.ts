@@ -12,29 +12,25 @@ export class NewsCronJob {
   ) {}
 
   public async syncNews(): Promise<void> {
-    try {
-      const today = new Date();
-      const yesterday = new Date(today);
-      yesterday.setDate(today.getDate() - 1);
+    const today = new Date();
+    const yesterday = new Date(today);
+    yesterday.setDate(today.getDate() - 1);
 
-      const apiResponse = await this.newsApi.getNews({
-        to: yesterday.toString(),
-        from: yesterday.toString(),
-      });
+    const apiResponse = await this.newsApi.getNews({
+      to: yesterday.toString(),
+      from: yesterday.toString(),
+    });
 
-      const newsFiltered = apiResponse.articles.filter(
-        (article) =>
-          article.description &&
-          article.description.trim().length > 0 &&
-          article.author &&
-          article.author.trim().length > 0
-      );
+    const newsFiltered = apiResponse.articles.filter(
+      (article) =>
+        article.description &&
+        article.description.trim().length > 0 &&
+        article.author &&
+        article.author.trim().length > 0
+    );
 
-      const articles = ArticleMapper.run(newsFiltered);
+    const articles = ArticleMapper.run(newsFiltered);
 
-      this.newsSyncService.run(articles);
-    } catch (error) {
-      console.log(error);
-    }
+    this.newsSyncService.run(articles);
   }
 }

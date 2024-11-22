@@ -22,7 +22,7 @@ export function Article({
   return (
     <a
       href="#"
-      className="block w-[100%] max-w-sm lg:max-w-lg xl:min-w-[70%] p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+      className="block w-[100%] max-w-sm lg:max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
     >
       <span className=" text-green-600">{author}</span>
       <h5 className="whitespace-wrap text-ellipsis overflow-hidden mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

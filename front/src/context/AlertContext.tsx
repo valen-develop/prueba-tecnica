@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { AlertMessageType } from "../types/AlertMessageTypes";
 
 const Context = React.createContext(null);
 

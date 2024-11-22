@@ -39,24 +39,15 @@ export function useNews() {
   }: {
     uuid: string;
   }): Promise<string | undefined> => {
-    const { data, status, statusMessage } = await deleteArticleService({
+    const { data } = await deleteArticleService({
       uuid,
     });
-
-    console.log(status);
-
-    if (status) {
-    }
-
-    console.log(data);
 
     return data;
   };
 
   const archiveArticle = async ({ articleUUID }: { articleUUID: string }) => {
     const today = new Date().toISOString();
-
-    console.log(today);
 
     try {
       const articleArchived = await archiveArticleService({
@@ -99,9 +90,10 @@ export function useNews() {
         showAlert({
           text: apiResponse.message,
         });
+        return false;
       }
 
-      console.log(apiResponse);
+      return true;
     } catch (error) {}
   };
 
