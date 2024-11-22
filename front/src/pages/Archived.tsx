@@ -5,15 +5,13 @@ import { Articles } from "../components/Articles";
 import { LoaderSpinner } from "../components/LoaderSpinner";
 import { io } from "socket.io-client";
 import { EVENTS } from "../events/EventNames";
-
-const URL =
-  process.env.NODE_ENV === "production" ? undefined : "http://localhost:3001";
+import { API_BASE_URL } from "../const/Api";
 
 export function Archived() {
   const { archicedArticles, setArchivedArticles, getAllArchived } = useNews();
 
   useEffect(() => {
-    const newSocket = io(URL);
+    const newSocket = io(API_BASE_URL);
 
     newSocket.on(EVENTS.ARTICLE_HAD_ARCHIVED, (articleArchived) => {
       setArchivedArticles((prevArticles) => [articleArchived, ...prevArticles]);

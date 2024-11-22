@@ -7,15 +7,13 @@ import { LoaderSpinner } from "../components/LoaderSpinner";
 import { EVENTS } from "../events/EventNames";
 import { io } from "socket.io-client";
 import { Main } from "../components/Main";
-
-const URL =
-  process.env.NODE_ENV === "production" ? undefined : "http://localhost:3001";
+import { API_BASE_URL } from "../const/Api";
 
 export function News() {
   const { articles, setArticles, getAllNews } = useNews();
 
   useEffect(() => {
-    const newSocket = io(URL);
+    const newSocket = io(API_BASE_URL);
 
     newSocket.on(EVENTS.ARTICLE_HAD_ARCHIVED, (articleArchived) => {
       setArticles((prevArticles) =>
