@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@controllers/*": ["/infrastructure/controllers/*"],
+      "@application/*": ["/application/*"],
+      "@domain/*": ["/domain/*"]
+    },
+    "target": "es2016",
+    "rootDir": "./src",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false
+  }
+}
