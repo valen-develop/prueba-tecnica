@@ -34,7 +34,6 @@ export function Archived() {
   return (
     <div>
       <Header />
-
       {archicedArticles ? (
         <Articles articles={archicedArticles} />
       ) : (

@@ -1,6 +1,5 @@
 import { inject, injectable } from "tsyringe";
 import { MongoDBRepository } from "../infrastructure/repository/MongoDBRepository";
-import { SocketConnectionManager } from "../infrastructure/connection/SocketConnectionManager";
 import { EVENTS } from "../domain/events/EventNames";
 
 @injectable()

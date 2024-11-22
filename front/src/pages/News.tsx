@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { useNews } from "../hooks/useNews";
 import { ArticleEntity } from "../domain/ArticleEntity";
 import { Articles } from "../components/Articles";
 import { Header } from "../components/Header";
 import { LoaderSpinner } from "../components/LoaderSpinner";
 import { EVENTS } from "../events/EventNames";
-import { io, Socket } from "socket.io-client";
+import { io } from "socket.io-client";
 import { Main } from "../components/Main";
 
 const URL =
@@ -13,7 +13,6 @@ const URL =
 
 export function News() {
   const { articles, setArticles, getAllNews } = useNews();
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const newSocket = io(URL);
@@ -43,7 +42,6 @@ export function News() {
   return (
     <div>
       <Header />
-
       <Main>
         {articles ? <Articles articles={articles} /> : <LoaderSpinner />}
       </Main>
