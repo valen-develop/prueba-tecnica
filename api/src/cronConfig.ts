@@ -9,7 +9,7 @@ const EVERY_DAY = "0 0 * * *";
 export const cronConfig = () => {
   const newsCronJob = container.resolve(NewsCronJob);
 
-  //newsCronJob.syncNews(); //TODO: Descomentar para bolcar las news al inicar
+  newsCronJob.syncNews();
 
   cron.schedule(EVERY_DAY, async () => {
     newsCronJob.syncNews();

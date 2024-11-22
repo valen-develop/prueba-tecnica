@@ -22,6 +22,12 @@ export function Archived() {
         prevArticles?.filter((article) => article._id !== data)
       );
     });
+
+    return () => {
+      if (newSocket) {
+        newSocket.disconnect();
+      }
+    };
   }, []);
 
   useEffect(() => {
