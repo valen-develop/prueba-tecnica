@@ -1,7 +1,6 @@
 import { inject, injectable } from "tsyringe";
 import { MongoDBRepository } from "../infrastructure/repository/MongoDBRepository";
 import { HttpResponse } from "../infrastructure/controllers/response/HttpResponse";
-import { Article } from "../domain/entities/Article";
 import { EVENTS } from "../domain/events/EventNames";
 import { BadRequestError } from "../domain/exceptions/BadRequestError";
 import { NotFoundError } from "../domain/exceptions/NotFoundError";
@@ -9,9 +8,7 @@ import { NotFoundError } from "../domain/exceptions/NotFoundError";
 @injectable()
 export class ArticleDeleteService {
   constructor(
-    @inject(MongoDBRepository) private mongoDBRepository: MongoDBRepository,
-    @inject(HttpResponse)
-    private httpResponse: HttpResponse
+    @inject(MongoDBRepository) private mongoDBRepository: MongoDBRepository
   ) {}
 
   public async run(articleUuid: string) {

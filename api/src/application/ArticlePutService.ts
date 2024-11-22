@@ -6,9 +6,7 @@ import { EVENTS } from "../domain/events/EventNames";
 @injectable()
 export class ArticlePutService {
   constructor(
-    @inject(MongoDBRepository) private mongoDBRepository: MongoDBRepository,
-    @inject(SocketConnectionManager)
-    private socketManager: SocketConnectionManager
+    @inject(MongoDBRepository) private mongoDBRepository: MongoDBRepository
   ) {}
 
   public async run(dto: any, uuid: string) {

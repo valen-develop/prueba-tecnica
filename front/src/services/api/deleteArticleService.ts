@@ -1,7 +1,8 @@
+import { API_BASE_URL } from "../../const/Api";
 import { ApiResponse } from "../../const/ApiResponse";
 
 export async function deleteArticleService({ uuid }: { uuid: string }) {
-  const apiResponse = await fetch(`http://localhost:3001/news/${uuid}`, {
+  const apiResponse = await fetch(`${API_BASE_URL}/news/${uuid}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

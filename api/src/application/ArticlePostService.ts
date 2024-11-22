@@ -18,6 +18,8 @@ export class ArticlePostService {
       date: dto.date,
     });
 
+    console.log(articleEntity);
+
     const article = await this.mongoDBRepository.saveArticle(articleEntity);
 
     global.io.emit(EVENTS.ARTICLE_ADDED, article);

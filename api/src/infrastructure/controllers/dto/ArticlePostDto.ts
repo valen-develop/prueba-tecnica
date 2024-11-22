@@ -10,6 +10,11 @@ export class ArticlePostDTO {
   @IsNotEmpty()
   description: string;
 
+  @IsNotEmpty()
+  @Type(() => Date)
+  @IsDate()
+  date: Date;
+
   @IsString()
   @IsNotEmpty()
   content: string;

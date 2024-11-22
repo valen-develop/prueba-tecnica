@@ -3,12 +3,11 @@ import { container } from "tsyringe";
 import { ArticlePostController } from "./infrastructure/controllers/ArticlePostController";
 import { ValidateDTO } from "./infrastructure/middlewares/validateDTO";
 import { ArticleGetController } from "./infrastructure/controllers/ArticleGetController";
-
 import { ArticlePutController } from "./infrastructure/controllers/ArticlePutController";
-import { ArticlePostDTO } from "./infrastructure/controllers/dto/ArticlePostDTO";
 import { ArticlePutDTO } from "./infrastructure/controllers/dto/ArticlePutDTO";
 import { ArticleGetArchivedController } from "./infrastructure/controllers/ArticleGetArchivedController";
 import { ArticleDeleteController } from "./infrastructure/controllers/ArticleDeleteController";
+import { ArticlePostDTO } from "./infrastructure/controllers/dto/ArticlePostDto";
 
 const router = Router();
 const DTOValidator = container.resolve(ValidateDTO);
