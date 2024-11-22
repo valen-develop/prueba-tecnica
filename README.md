@@ -12,10 +12,10 @@
 
 ## Funcionalidades
 
-- **Visualizar noticias**: Los usuarios pueden ver las últimas noticias de diversas fuentes.
-- **Archivar noticias**: Permite guardar noticias en el sistema.
+- **Visualizar noticias**: Los usuarios pueden noticias.
+- **Archivar noticias**: Permite archivar noticias en el sistema.
 - **Eliminar noticias**: Los usuarios pueden eliminar las noticias archivadas.
-- **Agregar nueva noticia**: Los usuarios pueden añadir noticias manualmente a la plataforma.
+- **Agregar nueva noticia**: Los usuarios pueden añadir noticias manualmente.
 
 ## Instalación
 
@@ -47,7 +47,7 @@
    Inicia el servidor del backend:
 
    ```
-   npm run start dev
+   npm run dev
    ```
 
 #### Frontend
@@ -62,5 +62,5 @@
 2. Inicia el proyecto
 
 ```
- npm run start
+ npm run start dev
 ```
